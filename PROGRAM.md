@@ -7,7 +7,7 @@ written in Rust. It gives estate consumers one governed surface for
 image, video, and music generation on primo, while keeping the
 underlying engines replaceable.
 
-Matt ruled the placement on 2026-10-20: a standalone media MCP, not
+Owner ruled the placement on 2026-10-20: a standalone media MCP, not
 a ComfyUI skin and not a feature folded into twilight or lumen.
 Atelier is infrastructure. It does not become a studio UI, a game
 asset manager, or the authority for a project's specific content
@@ -27,9 +27,9 @@ It fixes the content class, roots, and log destination. One binary
 and one host-wide engine-lifecycle authority serve either profile,
 so two profiles never become two engines contending for the A6000.
 
-- Repo: primo-local `~/atelier` until Matt gives the GitHub word.
+- Repo: primo-local `~/atelier` until Owner gives the GitHub word.
 - Registry: `ai.qompass/atelier` record prepared and **held**;
-  publication waits for Matt's word after S1 gates.
+  publication waits for Owner's word after S1 gates.
 - Packaging: Nix flake (estate container rule: no Docker/Podman).
 - Protocol: estate MCP conventions — stdio, legacy `initialize`
   era like fathom/phlow/twilight, correct `serverInfo` from the
@@ -44,7 +44,7 @@ so two profiles never become two engines contending for the A6000.
 | Consumer | Relationship |
 | --- | --- |
 | **Strobe** | First consumer, through the `ntranch` profile. Uses the image lane for game art and level art. Its first acceptance workload is the three-scene regeneration test defined in BRIEF-S1. |
-| **Twilight** | Matt explicitly wants twilight to be able to generate images. Twilight's **Slice B Create** lanes will be a thin MCP client over atelier's image/video/music tools, consuming **both** profiles: `qompass` for SFW studio work and `ntranch` when it is acting for Strobe's adult generation. Twilight keeps its conversations, Create surface, and gallery; gallery items are backed by files and manifests produced by atelier under the corresponding profile. Twilight does not own the engine lifecycle or GPU policy. |
+| **Twilight** | Owner explicitly wants twilight to be able to generate images. Twilight's **Slice B Create** lanes will be a thin MCP client over atelier's image/video/music tools, consuming **both** profiles: `qompass` for SFW studio work and `ntranch` when it is acting for Strobe's adult generation. Twilight keeps its conversations, Create surface, and gallery; gallery items are backed by files and manifests produced by atelier under the corresponding profile. Twilight does not own the engine lifecycle or GPU policy. |
 | **Lumen-adjacent media work** | May call atelier when a workflow needs generated media. Lumen does not host generation and does not absorb atelier. |
 | **Phlow workflows** | May orchestrate atelier tools like any other estate MCP tools, subject to the consumer project's own approvals and policy. |
 
@@ -245,7 +245,7 @@ used, and provenance manifest path.
 atelier is configured for the **`ntranch` profile** and regenerates
 the three ModificationApp test scenes named by primo
 `~/strobe-gen-test/REGEN-BRIEFS.md` through `atelier_img2img`,
-producing a source-vs-regen set with a manifest for Pax/Matt review.
+producing a source-vs-regen set with a manifest for Pax/Owner review.
 All acceptance outputs and logs land under the NTRanch profile roots.
 Details and pass conditions are in BRIEF-S1.
 
@@ -278,7 +278,7 @@ backend versus ACE-Step's own local backend. It does not install a
 custom-node package merely because one exists; supply-chain and
 version evidence are part of the stage gate.
 
-### Later, only on evidence and Matt's word
+### Later, only on evidence and Owner's word
 
 - masks/inpainting and ControlNet-style conditioning;
 - LoRA admission and character-consistency workflows for Strobe;
@@ -305,12 +305,12 @@ Every stage follows the same pattern:
    progress-board movement, or next stage follow.
 
 Registry preparation may happen while S1 is in review, but the
-`ai.qompass/atelier` record is **held** until Matt authorizes
+`ai.qompass/atelier` record is **held** until Owner authorizes
 publication after S1 gates.
 
 ## Decision log
 
-- **2026-10-20 — Standalone server.** Matt ruled for a standalone
+- **2026-10-20 — Standalone server.** Owner ruled for a standalone
   media MCP (atelier) rather than making ComfyUI the estate surface
   or folding generation into twilight. ComfyUI is the v1 engine
   behind a backend trait.
@@ -327,17 +327,17 @@ publication after S1 gates.
   property of the request, not the engine, and one lifecycle avoids
   GPU contention between two servers.
 
-## Open questions for Matt
+## Open questions for Owner
 
 - **Q-ATELIER-1 — GitHub home.** Create `qompassai/atelier` now, or
   keep the repo primo-local until S1 gates? Program default follows
-  twilight/tackle: local-only until Matt's word. Does not block S1.
+  twilight/tackle: local-only until Owner's word. Does not block S1.
 - **Q-ATELIER-2 — Registry timing.** Pax recommendation: prepare the
   `ai.qompass/atelier` record during S1 review and publish only on
-  Matt's explicit word after the S1 gate.
+  Owner's explicit word after the S1 gate.
 - **Q-ATELIER-3 — Attached-engine rule.** S1 refuses to use a
   ComfyUI instance atelier did not start, because it cannot safely
-  own cleanup. If Matt wants atelier to reuse a ComfyUI he already
+  own cleanup. If Owner wants atelier to reuse a ComfyUI he already
   has open, that needs a separate rule for “attach but never stop”
   and a decision about whether `/free` may be called. Not S1's
   default.
@@ -360,7 +360,7 @@ publication after S1 gates.
   Pax will bring the evidence and the route choice back rather than
   silently adding a second runtime.
 
-## Boundary with lumen (Pax, 2026-10-20, from Matt's overlap question)
+## Boundary with lumen (Pax, 2026-10-20, from Owner's overlap question)
 
 Atelier generates flat media (image, video, audio) from prompts and
 references. Lumen is the sprite-to-3D character factory: identity
@@ -371,9 +371,9 @@ as sources. Atelier never rigs, models, or exports 3D. Lumen never
 grows a diffusion or generation backend. Twilight's Create lanes sit
 above both as the studio surface.
 
-## Planned convergence with lumen (Matt's direction, 2026-10-20)
+## Planned convergence with lumen (Owner's direction, 2026-10-20)
 
-Matt's stated end-state: atelier may eventually fold INTO lumen, so
+Owner's stated end-state: atelier may eventually fold INTO lumen, so
 lumen offers flat generation (image, and later video/audio) alongside
 its sprite-to-3D transformation work. This is a planned convergence,
 not a current merge, and it is trigger-gated:
@@ -392,16 +392,16 @@ deliberately fold-compatible. On a fold, the profile system (qompass
 generation module; a fold that dissolves the lane wall is not the
 planned fold.
 
-## Rulings (Matt, 2026-10-20)
+## Rulings (Owner, 2026-10-20)
 
 - Q-ATELIER-1: GitHub home NOW — create qompassai/atelier.
 - Q-ATELIER-2: Yes — registry record prepared during S1 review,
-  published only on Matt's word after the S1 gate.
+  published only on Owner's word after the S1 gate.
 - Q-ATELIER-3: Agreed with Pax — S1 uses only an engine atelier
   started; attach-mode is a later, separate rule.
 - Q-ATELIER-4: Agreed with Pax — S1 returns primo-local paths and
   hashes; bytes/resources are a later surface decision.
-- Q-ATELIER-5: Yes, as amended by Matt the same day — admission
+- Q-ATELIER-5: Yes, as amended by Owner the same day — admission
   requires name, source, and hash recorded before first use. The
   LICENSE posture is alert-not-deny: if no license record exists,
   atelier admits the model but raises an alert (warn-stamped log

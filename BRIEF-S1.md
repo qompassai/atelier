@@ -44,7 +44,7 @@ holder to start atelier.
 
 - Host: primo only.
 - New repo: `/home/phaedrus/atelier` (local git, **no remote, no
-  push** until Matt's GitHub word).
+  push** until Owner's GitHub word).
 - Branch: `pax/atelier-s1`. Make the initial scaffold commit if the
   dispatcher has not already created the repo, then do all S1 work
   on this branch with local commits in logical slices.
@@ -364,7 +364,7 @@ Run these after the automated suite is green:
 
 This acceptance is operational and evidentiary. It proves atelier can
 perform the requested generations and preserve the set; Pax and
-Matt judge visual quality separately.
+Owner judge visual quality separately.
 
 ### Inputs
 
@@ -422,7 +422,7 @@ S1's operational acceptance passes only if all three scenes complete
 through `atelier_img2img`, the source-vs-regen set and manifests are
 complete, sources are unchanged, profile separation holds, and the
 owned ComfyUI process is stopped afterward. Visual quality is
-recorded as **pending Pax/Matt review**, never as a worker verdict.
+recorded as **pending Pax/Owner review**, never as a worker verdict.
 
 ## Repository gates
 

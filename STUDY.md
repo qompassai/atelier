@@ -2,18 +2,18 @@
 
 ## Commission and fork
 
-Matt commissioned a local media-generation capability for Strobe and
+Owner commissioned a local media-generation capability for Strobe and
 then ruled the architectural fork on 2026-10-20:
 
 - **Standalone media MCP — ADOPTED.** The estate gets its own small
-  Rust MCP server, working name **atelier** (confirmed by Matt's
+  Rust MCP server, working name **atelier** (confirmed by Owner's
   pick), rather than treating ComfyUI as the estate-facing solution.
 - **ComfyUI is an engine, not the product surface.** Atelier owns the
   MCP contract, model roster, workflow templates, lifecycle, output
   provenance, and GPU policy. ComfyUI sits behind a backend trait so
   a later native or alternative engine does not change atelier's
   tools.
-- **Twilight is a consumer, not the host.** Matt also ruled that
+- **Twilight is a consumer, not the host.** Owner also ruled that
   twilight must be able to do image generation. Twilight's Slice B
   Create lanes will consume atelier as an MCP client; atelier does
   not absorb twilight's studio, gallery, or client wiring.
@@ -50,7 +50,7 @@ claim either lane is implemented.
 
 ## Engine reality on primo
 
-- Matt installed ComfyUI himself from the AUR: package version
+- Owner installed ComfyUI himself from the AUR: package version
   **0.39.0**.
 - A separate engine bring-up is pinning the AUR layout, model path
   wiring, launch command, port, GPU selection, and a tame smoke in
