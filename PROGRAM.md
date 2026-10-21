@@ -401,8 +401,15 @@ planned fold.
   started; attach-mode is a later, separate rule.
 - Q-ATELIER-4: Agreed with Pax — S1 returns primo-local paths and
   hashes; bytes/resources are a later surface decision.
-- Q-ATELIER-5: Yes — model admission requires name, source, license
-  posture, and hash recorded before first use.
+- Q-ATELIER-5: Yes, as amended by Matt the same day — admission
+  requires name, source, and hash recorded before first use. The
+  LICENSE posture is alert-not-deny: if no license record exists,
+  atelier admits the model but raises an alert (warn-stamped log
+  line, a license_alert field on results, and license: UNRECORDED
+  stamped on output provenance manifests). Outputs from an
+  unrecorded-license model are automatically not cleared for
+  production, which is how Q-ATELIER-6 stays enforceable without a
+  gate.
 - Q-ATELIER-6: Agreed — the dedicated commercial-use license read is
   owed before Strobe's production release; it does not block S1.
 - Q-ATELIER-7: Understood — route contradictions come back with
